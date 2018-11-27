@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let initialController = ListRSSNavigationController()
+        initialController.setRootWireframe(ListRssWireframe())
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        self.window?.rootViewController = initialController
         return true
     }
 

@@ -6,10 +6,11 @@
 //  Copyright © 2018 Denis. All rights reserved.
 //
 
-import Foundation
-import ObjectMapper
+import XMLMapper
 
-class Enclosure: Mappable {
+class Enclosure: XMLMappable {
+    var nodeName: String!
+    
     var url: String?
     var length: String?
     var type: TypeEnum?
@@ -20,11 +21,11 @@ class Enclosure: Mappable {
         self.type = type
     }
     
-    required init?(map: Map) {
+    required init?(map: XMLMap) {
         
     }
     
-    func mapping(map: Map) {
+    func mapping(map: XMLMap) {
         url <- map["_url"]
         length <- map["_length"]
         type <- map["_type"]

@@ -6,10 +6,11 @@
 //  Copyright © 2018 Denis. All rights reserved.
 //
 
-import Foundation
-import ObjectMapper
+import XMLMapper
 
-class Channel: Mappable {
+class Channel: XMLMappable {
+    var nodeName: String!
+    
     var title: Title?
     var description: String?
     var link: [LinkElement]?
@@ -29,11 +30,11 @@ class Channel: Mappable {
         self.docs = docs
         self.item = item
     }
-    required init?(map: Map) {
+    required init?(map: XMLMap) {
         
     }
     
-    func mapping(map: Map) {
+    func mapping(map: XMLMap) {
         title <- map["title"]
         description <- map["description"]
         link <- map["link"]

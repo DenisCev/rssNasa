@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import Alamofire
 
 final class ListRssPresenter {
 
@@ -17,6 +18,12 @@ final class ListRssPresenter {
     private unowned var _view: ListRssViewInterface
     private var _interactor: ListRssInteractorInterface
     private var _wireframe: ListRssWireframeInterface
+    
+    fileprivate var _items: [Item] = [] {
+        didSet {
+            _view.reloadData()
+        }
+    }
 
     // MARK: - Lifecycle -
 
@@ -30,4 +37,39 @@ final class ListRssPresenter {
 // MARK: - Extensions -
 
 extension ListRssPresenter: ListRssPresenterInterface {
+    func startFetchData() {
+        _interactor.getListRSS() { [weak self] (response) -> (Void) in
+            self?._handleListRSS(response.result)
+        }
+    }
+    
+    func viewDidLoad() {
+    }
+    
+    func numberOfSections() -> Int {
+        return 1
+    }
+    
+    func numberOfItems(in section: Int) -> Int {
+        return _items.count
+    }
+    
+    func item(at indexPath: IndexPath) -> Item {
+        return _items[indexPath.row]
+    }
+    
+    func didSelectItem(at indexPath: IndexPath) {
+        //let result = _items[indexPath.row]
+        //_wireframe.navigate(to: .details(result))
+    }
+    
+    private func _handleListRSS(_ result: Result<RSS>) {
+        switch result {
+        case .success(let listRSSObject):
+            _items = (listRSSObject.channel?.item)!
+
+        case .failure(let error):
+            _wireframe.showErrorAlert(with: error.message)
+        }
+    }
 }

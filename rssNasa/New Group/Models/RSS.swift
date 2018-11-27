@@ -6,10 +6,11 @@
 //  Copyright © 2018 Denis. All rights reserved.
 //
 
-import Foundation
-import ObjectMapper
+import XMLMapper
 
-class RSS: Mappable {
+class RSS: XMLMappable {
+    var nodeName: String!
+    
     var channel: Channel?
     var xmlnsAtom: String?
     var xmlnsDc: String?
@@ -27,11 +28,11 @@ class RSS: Mappable {
         self.version = version
         self.xmlBase = xmlBase
     }
-    required init?(map: Map) {
+    required init?(map: XMLMap) {
         
     }
     
-    func mapping(map: Map) {
+    func mapping(map: XMLMap) {
         channel <- map["channel"]
         xmlnsAtom <- map["_xmlns:atom"]
         xmlnsDc <- map["_xmlns:dc"]

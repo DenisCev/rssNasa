@@ -6,10 +6,11 @@
 //  Copyright © 2018 Denis. All rights reserved.
 //
 
-import Foundation
-import ObjectMapper
+import XMLMapper
 
-class Source: Mappable{
+class Source: XMLMappable {
+    var nodeName: String!
+    
     var url: String?
     var text: Title?
     
@@ -17,11 +18,11 @@ class Source: Mappable{
         self.url = url
         self.text = text
     }
-    required init?(map: Map) {
+    required init?(map: XMLMap) {
         
     }
     
-    func mapping(map: Map) {
+    func mapping(map: XMLMap) {
         url <- map["_url"]
         text <- map["__text"]
     }

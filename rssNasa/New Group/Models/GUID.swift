@@ -6,10 +6,11 @@
 //  Copyright © 2018 Denis. All rights reserved.
 //
 
-import Foundation
-import ObjectMapper
+import XMLMapper
 
-class GUID: Mappable {
+class GUID: XMLMappable {
+    var nodeName: String!
+    
     var isPermaLink: String?
     var text: String?
     
@@ -17,11 +18,11 @@ class GUID: Mappable {
         self.isPermaLink = isPermaLink
         self.text = text
     }
-    required init?(map: Map) {
+    required init?(map: XMLMap) {
         
     }
     
-    func mapping(map: Map) {
+    func mapping(map: XMLMap) {
         isPermaLink <- map["_isPermaLink"]
         text <- map["__text"]
     }

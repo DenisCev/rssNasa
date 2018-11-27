@@ -6,10 +6,11 @@
 //  Copyright © 2018 Denis. All rights reserved.
 //
 
-import Foundation
-import ObjectMapper
+import XMLMapper
 
-class LinkClass: Mappable {
+class LinkClass: XMLMappable {
+    var nodeName: String!
+    
     var rel: String?
     var href: String?
     var linkPrefix: String?
@@ -20,11 +21,11 @@ class LinkClass: Mappable {
         self.linkPrefix = linkPrefix
     }
     
-    required init?(map: Map) {
+    required init?(map: XMLMap) {
         
     }
     
-    func mapping(map: Map) {
+    func mapping(map: XMLMap) {
         rel <- map["_rel"]
         href <- map["_href"]
         linkPrefix <- map["__prefix"]

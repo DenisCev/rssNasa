@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import Alamofire
 
 enum ListRssNavigationOption {
 }
@@ -18,10 +19,19 @@ protocol ListRssWireframeInterface: WireframeInterface {
 }
 
 protocol ListRssViewInterface: ViewInterface {
+    func reloadData()
 }
 
 protocol ListRssPresenterInterface: PresenterInterface {
+    func startFetchData()
+    
+    func numberOfSections() -> Int
+    func numberOfItems(in section: Int) -> Int
+    func item(at indexPath: IndexPath) -> Item
+    func didSelectItem(at indexPath: IndexPath)
 }
 
 protocol ListRssInteractorInterface: InteractorInterface {
+    @discardableResult
+    func getListRSS(_ completion: @escaping ListRSSCompletionBlock) -> DataRequest
 }

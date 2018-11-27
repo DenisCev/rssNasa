@@ -26,7 +26,6 @@ final class ListRssWireframe: BaseWireframe {
         let presenter = ListRssPresenter(wireframe: self, view: moduleViewController, interactor: interactor)
         moduleViewController.presenter = presenter
     }
-
 }
 
 // MARK: - Extensions -
