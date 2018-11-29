@@ -238,6 +238,7 @@
 				3AE9D73721ADA52800CDD307 /* ErrorMessage.swift */,
 				3AE9D73921ADA9F400CDD307 /* XMLParser.swift */,
 				3A7FCEB521ADC6AF00E91B76 /* ListRSSNavigationController.swift */,
+				3A7FCEB221ADC05500E91B76 /* Section.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -254,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				3AE9D73F21ADB62600CDD307 /* ListRSSCell.swift */,
-				3A7FCEB221ADC05500E91B76 /* Section.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";

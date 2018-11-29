@@ -44,6 +44,7 @@ extension ListRssPresenter: ListRssPresenterInterface {
     }
     
     func viewDidLoad() {
+        startFetchData()
     }
     
     func numberOfSections() -> Int {

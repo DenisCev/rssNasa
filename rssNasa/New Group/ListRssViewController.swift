@@ -24,7 +24,6 @@ final class ListRssViewController: UIViewController {
         presenter.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        presenter.startFetchData()
     }
 	
 }

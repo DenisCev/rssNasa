@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let initialController = ListRSSNavigationController()
         initialController.setRootWireframe(ListRssWireframe())
         
-        self.window = UIWindow(frame: UIScreen.main.bounds)
+        //self.window = UIWindow(frame: UIScreen.main.bounds)
         
         self.window?.rootViewController = initialController
         return true
