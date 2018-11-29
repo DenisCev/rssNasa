@@ -41,6 +41,8 @@
 		3AE9D73A21ADA9F400CDD307 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9D73921ADA9F400CDD307 /* XMLParser.swift */; };
 		3AE9D73D21ADB31200CDD307 /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9D73C21ADB31200CDD307 /* WelcomeModel.swift */; };
 		3AE9D74021ADB62600CDD307 /* ListRSSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9D73F21ADB62600CDD307 /* ListRSSCell.swift */; };
+		3AFCA4F321B055A00029229E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFCA4F221B055A00029229E /* Alamofire.framework */; };
+		3AFCA4F521B055A50029229E /* XMLMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFCA4F421B055A50029229E /* XMLMapper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		3AE9D73921ADA9F400CDD307 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		3AE9D73C21ADB31200CDD307 /* WelcomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModel.swift; sourceTree = "<group>"; };
 		3AE9D73F21ADB62600CDD307 /* ListRSSCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRSSCell.swift; sourceTree = "<group>"; };
+		3AFCA4F221B055A00029229E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AFCA4F421B055A50029229E /* XMLMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XMLMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A0C9C915DDD93503AF1E08 /* Pods-rssNasa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssNasa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rssNasa/Pods-rssNasa.debug.xcconfig"; sourceTree = "<group>"; };
 		737BDFDE70CD25E62CC71547 /* Pods_rssNasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rssNasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02B8F634E5BB68C10D65FD5 /* Pods-rssNasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssNasa.release.xcconfig"; path = "Pods/Target Support Files/Pods-rssNasa/Pods-rssNasa.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFCA4F321B055A00029229E /* Alamofire.framework in Frameworks */,
+				3AFCA4F521B055A50029229E /* XMLMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +137,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A50258921B03A6700CC4829 /* DetailRss */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailRss;
+			sourceTree = "<group>";
+		};
+		3A50259621B03D8A00CC4829 /* ListRss */ = {
+			isa = PBXGroup;
+			children = (
+				3AE9D73E21ADB60600CDD307 /* Cell */,
+				3AE9D73B21ADAF9700CDD307 /* Service */,
+				3AE9D71F21AD910A00CDD307 /* Models */,
+				3AE9D6F821AD82F600CDD307 /* ListRss.storyboard */,
+				3AE9D6F921AD82F600CDD307 /* ListRssInterfaces.swift */,
+				3AE9D6FA21AD82F600CDD307 /* ListRssPresenter.swift */,
+				3AE9D6FB21AD82F600CDD307 /* ListRssViewController.swift */,
+				3AE9D6FC21AD82F600CDD307 /* ListRssInteractor.swift */,
+				3AE9D6FD21AD82F600CDD307 /* ListRssWireframe.swift */,
+			);
+			path = ListRss;
+			sourceTree = "<group>";
+		};
 		3A7FCEB421ADC62200E91B76 /* VIPER V2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +200,8 @@
 			children = (
 				3A7FCEB421ADC62200E91B76 /* VIPER V2 */,
 				3AE9D73221ADA44000CDD307 /* Shared */,
-				3AE9D70421AD831900CDD307 /* ListRss */,
+				3A50259621B03D8A00CC4829 /* ListRss */,
+				3A50258921B03A6700CC4829 /* DetailRss */,
 				3AE9D6CA21AD812400CDD307 /* AppDelegate.swift */,
 				3AE9D6D121AD812500CDD307 /* Assets.xcassets */,
 				3AE9D6D321AD812500CDD307 /* LaunchScreen.storyboard */,
@@ -196,23 +226,6 @@
 				3AE9D6EC21AD812500CDD307 /* Info.plist */,
 			);
 			path = rssNasaUITests;
-			sourceTree = "<group>";
-		};
-		3AE9D70421AD831900CDD307 /* ListRss */ = {
-			isa = PBXGroup;
-			children = (
-				3AE9D73E21ADB60600CDD307 /* Cell */,
-				3AE9D73B21ADAF9700CDD307 /* Service */,
-				3AE9D71F21AD910A00CDD307 /* Models */,
-				3AE9D6F821AD82F600CDD307 /* ListRss.storyboard */,
-				3AE9D6F921AD82F600CDD307 /* ListRssInterfaces.swift */,
-				3AE9D6FA21AD82F600CDD307 /* ListRssPresenter.swift */,
-				3AE9D6FB21AD82F600CDD307 /* ListRssViewController.swift */,
-				3AE9D6FC21AD82F600CDD307 /* ListRssInteractor.swift */,
-				3AE9D6FD21AD82F600CDD307 /* ListRssWireframe.swift */,
-			);
-			name = ListRss;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		3AE9D71F21AD910A00CDD307 /* Models */ = {
@@ -271,6 +284,8 @@
 		6D742A42673A0D7B41AC7729 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AFCA4F421B055A50029229E /* XMLMapper.framework */,
+				3AFCA4F221B055A00029229E /* Alamofire.framework */,
 				737BDFDE70CD25E62CC71547 /* Pods_rssNasa.framework */,
 			);
 			name = Frameworks;
@@ -583,7 +598,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -638,10 +653,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -653,7 +669,9 @@
 			baseConfigurationReference = 72A0C9C915DDD93503AF1E08 /* Pods-rssNasa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = rssNasa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -662,6 +680,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.denis.rssNasa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -672,7 +691,9 @@
 			baseConfigurationReference = F02B8F634E5BB68C10D65FD5 /* Pods-rssNasa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = rssNasa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -681,6 +702,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.denis.rssNasa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -698,6 +720,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.denis.rssNasaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -718,6 +741,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.denis.rssNasaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

@@ -9,19 +9,42 @@
 import XCTest
 @testable import rssNasa
 
-class rssNasaTests: XCTestCase {
+import Alamofire
+import XMLMapper
 
+class rssNasaTests: XCTestCase {
+    
+    typealias TestListRSSCompletionBlock = (DataResponse<RSS>) -> (Void)
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+     
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testAPICall() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+      
+        let url = URL(string: "https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss")!
+        Alamofire.request(url, method: .get).responseXMLObject { (response: DataResponse<RSS>) in
+            
+            self.testHandleListRSS(response.result)
+        }
+      
+    }
+    
+    func testHandleListRSS(_ result: Result<RSS>) {
+        switch result {
+        case .success(let listRSSObject):
+             XCTAssertNotNil(listRSSObject)
+            
+        case .failure(let error):
+           XCTAssertNil(error)
+        }
     }
 
     func testPerformanceExample() {
@@ -30,5 +53,4 @@ class rssNasaTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }
