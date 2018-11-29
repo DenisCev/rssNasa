@@ -14,8 +14,6 @@ import XMLMapper
 
 class rssNasaTests: XCTestCase {
     
-    typealias TestListRSSCompletionBlock = (DataResponse<RSS>) -> (Void)
-    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
      

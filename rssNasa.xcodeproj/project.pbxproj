@@ -10,6 +10,8 @@
 		00236D293CD6211D1AF33A51 /* Pods_rssNasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737BDFDE70CD25E62CC71547 /* Pods_rssNasa.framework */; };
 		3A7FCEB321ADC05500E91B76 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FCEB221ADC05500E91B76 /* Section.swift */; };
 		3A7FCEB621ADC6AF00E91B76 /* ListRSSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FCEB521ADC6AF00E91B76 /* ListRSSNavigationController.swift */; };
+		3ADEFED321B05C9A0042402B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADEFED221B05C9A0042402B /* Alamofire.framework */; };
+		3ADEFED521B05CA40042402B /* XMLMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADEFED421B05CA40042402B /* XMLMapper.framework */; };
 		3AE9D6CB21AD812400CDD307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9D6CA21AD812400CDD307 /* AppDelegate.swift */; };
 		3AE9D6D221AD812500CDD307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AE9D6D121AD812500CDD307 /* Assets.xcassets */; };
 		3AE9D6D521AD812500CDD307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE9D6D321AD812500CDD307 /* LaunchScreen.storyboard */; };
@@ -65,6 +67,8 @@
 /* Begin PBXFileReference section */
 		3A7FCEB221ADC05500E91B76 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		3A7FCEB521ADC6AF00E91B76 /* ListRSSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRSSNavigationController.swift; sourceTree = "<group>"; };
+		3ADEFED221B05C9A0042402B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ADEFED421B05CA40042402B /* XMLMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XMLMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE9D6C721AD812400CDD307 /* rssNasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rssNasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE9D6CA21AD812400CDD307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AE9D6D121AD812500CDD307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ADEFED521B05CA40042402B /* XMLMapper.framework in Frameworks */,
+				3ADEFED321B05C9A0042402B /* Alamofire.framework in Frameworks */,
 				00236D293CD6211D1AF33A51 /* Pods_rssNasa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +290,8 @@
 		6D742A42673A0D7B41AC7729 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3ADEFED421B05CA40042402B /* XMLMapper.framework */,
+				3ADEFED221B05C9A0042402B /* Alamofire.framework */,
 				3AFCA4F421B055A50029229E /* XMLMapper.framework */,
 				3AFCA4F221B055A00029229E /* Alamofire.framework */,
 				737BDFDE70CD25E62CC71547 /* Pods_rssNasa.framework */,
@@ -320,6 +328,7 @@
 				3AE9D6D721AD812500CDD307 /* Sources */,
 				3AE9D6D821AD812500CDD307 /* Frameworks */,
 				3AE9D6D921AD812500CDD307 /* Resources */,
+				3ADEFED621B05E220042402B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -421,6 +430,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3ADEFED621B05E220042402B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-rssNasa/Pods-rssNasa-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rssNasa/Pods-rssNasa-frameworks.sh\"\n";
+		};
 		8C2F7067907EEED12302F307 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,7 +462,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rssNasa/Pods-rssNasa-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/XMLMapper/XMLMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
