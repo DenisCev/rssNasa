@@ -29,7 +29,6 @@ protocol ListRssPresenterInterface: PresenterInterface {
     func numberOfItems(in section: Int) -> Int
     func item(at indexPath: IndexPath) -> Item
     func didSelectItem(at indexPath: IndexPath)
-    func cell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
 }
 
 protocol ListRssInteractorInterface: InteractorInterface {

@@ -47,7 +47,23 @@ extension ListRssViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return presenter.cell(tableView: tableView, cellForRowAt: indexPath)
+        //Metodo encargado de configurar la celda
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListRSSCell", for: indexPath) as! ListRSSCell
+        let item = presenter.item(at: indexPath)
+        cell.configure(with: item)
+            
+        _handleRowColor(cell: cell, indexPath: indexPath, tableView: tableView)
+        
+        return cell
+    }
+    
+    private func _handleRowColor(cell: UITableViewCell, indexPath: IndexPath, tableView: UITableView) {
+        if((indexPath.row % 2) == 0){
+            cell.backgroundColor = .white
+        } else {
+            //Color gris tenue
+            cell.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
+        }
     }
     
 }
