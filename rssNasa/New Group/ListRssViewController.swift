@@ -47,10 +47,7 @@ extension ListRssViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListRSSCell", for: indexPath) as! ListRSSCell
-        let item = presenter.item(at: indexPath)
-        cell.configure(with: item)
-        return cell
+        return presenter.cell(tableView: tableView, cellForRowAt: indexPath)
     }
     
 }
